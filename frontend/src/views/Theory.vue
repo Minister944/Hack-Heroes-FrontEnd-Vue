@@ -6,20 +6,20 @@
                       <div class="col-sm-9 col-md-8 col-lg-8" id="resource-holder">
                       <img
                             v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] !== '4' && this.queryquery.pytania[NumberPytanie].media !== ''"
-                            v-bind:src="'http://localhost/media/' + this.queryquery.pytania[NumberPytanie].media"
+                            v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[NumberPytanie].media"
                           />
                           <video id="hls-video" autoplay v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && stoptimevideo" class="p-3">
                             <source
-                              v-bind:src="'http://localhost/media/' + this.queryquery.pytania[NumberPytanie].media"
+                              v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[NumberPytanie].media"
                               type="video/mp4"
                             />
                           </video>
                           <img v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && !stoptimevideo"
-                            src='http://localhost/media/obj.png'
+                            src='http://46.41.136.62/media/obj.png'
                           />
                           <img
                             v-if="this.queryquery.pytania[NumberPytanie].media === ''"
-                            src='http://localhost/media/brak_zdjecia_1024x576.jpg'
+                            src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
                           />
                       </div>
 
@@ -127,15 +127,15 @@
                       <div class="card good" v-for="n in 31" :key="n" :class="{bad: this.queryquery.pytania[n-1].poprawna_odp !== odpuzt[n-1]}" >
                         <img class="card-img-top"
                               v-if="this.queryquery.pytania[n-1].media[this.queryquery.pytania[n-1].media.length - 1] !== '4' && this.queryquery.pytania[n-1].media !== ''"
-                              v-bind:src="'http://localhost/media/' + this.queryquery.pytania[n-1].media"
+                              v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[n-1].media"
                             />
                             <img class="card-img-top"
                               v-if="this.queryquery.pytania[n-1].media === ''"
-                              src='http://localhost/media/brak_zdjecia_1024x576.jpg'
+                              src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
                             /> 
                             <video id="hls-video" class="card-img-top" controls v-if="this.queryquery.pytania[n-1].media[this.queryquery.pytania[n-1].media.length - 1] === '4'">
                               <source
-                                v-bind:src="'http://localhost/media/' + this.queryquery.pytania[n-1].media"
+                                v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[n-1].media"
                                 type="video/mp4"
                               />
                             </video>
@@ -179,10 +179,10 @@ export default {
       nextquery: false,
 
       stoptimevideo: false,
-      timezapoznanie: 5,
-      timeodp: 5,
-      max_timezapoznanie: 7,
-      max_timeodp: 7,
+      timezapoznanie: 15,
+      timeodp: 15,
+      max_timezapoznanie: 15,
+      max_timeodp: 15,
 
       zap_odp:  true,
       odpuzt:[],
@@ -239,7 +239,7 @@ export default {
         var min = s / 60; 
         var sLeft = Math.floor(s  % 60);     
         var minLeft = Math.floor(min % 60); // po minieciu limitu czasu wylacz 
-        if(min >= 1) {
+        if(min >= 25) {
           this.chcekEndtime = true
           this.endyest = false 
         }
@@ -324,7 +324,10 @@ export default {
       this.NumberPytanie++
       console.log(this.odpuzt)
     }
-
+    this.poprawne = 0
+     for(var licz1 =0; licz1 < 31; licz1++){   
+      if(this.queryquery.pytania[licz1].poprawna_odp === this.odpuzt[licz1]) this.poprawne++
+     }
     this.endyest = false
 
   },

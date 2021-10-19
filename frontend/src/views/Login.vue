@@ -71,7 +71,7 @@ export default {
       }
       if (!this.password) {
         this.errors.push("Hasło wymagane.");
-      } else if (this.password.length > 15) {
+      } else if (this.password.length > 40) {
         this.errors.push("Hasło za długie.");
       } else if (this.password.length < 8) {
         this.errors.push("Hasło za krótkie.");

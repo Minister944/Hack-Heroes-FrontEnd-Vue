@@ -14,17 +14,17 @@
         </div>
         <img
           v-if="this.queryquery.media[this.queryquery.media.length - 1] !== '4' && this.queryquery.media !== ''"
-          v-bind:src="'http://localhost/media/' + this.queryquery.media"
+          v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
         />
         <video v-if="this.queryquery.media[this.queryquery.media.length - 1] === '4' && this.queryquery.media !== ''" controls class="p-3">
           <source
-            v-bind:src="'http://localhost/media/' + this.queryquery.media"
+            v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
             type="video/mp4"
           />
         </video>
         <img
           v-if="this.queryquery.media === ''"
-          src='http://localhost/media/brak_zdjecia_1024x576.jpg'
+          src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
         />
         <div
           class="good odp"

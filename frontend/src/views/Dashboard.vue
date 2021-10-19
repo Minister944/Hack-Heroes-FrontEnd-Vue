@@ -93,7 +93,7 @@
             <h1 class="card-title">Ranking</h1>
             <p>Lista użytkowników ktorzy rozwiazali teori na 100% i w jak najkrotszym czasie</p>
             <div class="card-text">
-              <b-table striped hover :items="items" :fields="fields"></b-table>.
+              <b-table striped hover :items="items" :fields="fields"></b-table>
             </div>
           </div>
         </div>
@@ -108,9 +108,32 @@
               <li class="list-group-item"><a href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></li>
               <li class="list-group-item"><a href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></li>
               <li class="list-group-item">Zalecamy zmienić opony na zimowe, gdy średnia temperatura spadnie i pozostanie poniżej 7°C.</li>
-              <li class="list-group-item"><a href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li>
-           
+              <li class="list-group-item"><a href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li> 
            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col mb-4 ">
+        <div class="card" >
+          <div class="card-body">
+            <h1 class="card-title">Nauka</h1>
+            <div class="container" style="flex-direction: row;">
+              <div class="row justify-content-md-center">
+                <div class="col col-lg-2 box" v-bind:class="{actual: getuserProfile.lvl == n-1, unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
+                 <router-link v-if="getuserProfile.lvl == n-1" to="/Learn" type="button" class="btn btn-primary btn-lg custom-btn" >Teoria</router-link>
+                <div v-else>{{n}}</div>
+                </div>
+              </div>
+            </div>
+            <h1 class="card-title pt-3">Skrzyzowania</h1>
+            <div class="container" style="flex-direction: row;">
+              <div class="row justify-content-md-center">
+                <div class="col col-lg-2 box" v-bind:class="{unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
+                  {{n}}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -136,7 +159,7 @@ export default {
         { key: "czas", label: "Czas" },
       ],
       items: [
-        {login: '', ilosc_punktow: '',czas: "00:64" },
+        {login: '', ilosc_punktow: '',czas: '' },
       ],
     };
   },
@@ -229,6 +252,25 @@ export default {
 };
 </script>
 <style scoped>
+.box{
+  width: 50px;
+  background-color: #e44848;
+  display: flex; 
+  justify-content: center; 
+  line-height: 50px;
+  height: 50px;
+   border-radius: 1rem;
+   margin: 1px;
+}
+
+.actual{
+   background-color: #fcba03
+}
+
+.unloc{
+  background-color: #18d698;
+}
+
 .custom-btn {
   background-color: #3c987a;
   border-color: #3c987a;
