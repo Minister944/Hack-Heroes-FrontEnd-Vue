@@ -150,7 +150,7 @@ export default {
   methods: {
     async gettatistic(){
       var response = await axios.post(
-        "http://127.0.0.1:5000/api/v1/statistics/getStats", '',
+        "http://46.41.136.62:5000/api/v1/statistics/getStats", '',
         {
           headers: {
             "Access-Control-Allow-Credentials": true,
