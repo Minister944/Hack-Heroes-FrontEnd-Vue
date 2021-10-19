@@ -44,7 +44,7 @@
                   to="/Learn"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
-                  >Teoria</router-link
+                  >Teoria (do usuniecia)</router-link
                 >
               </div>
               <div>
@@ -52,7 +52,7 @@
                   to="/VirtualCar"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
-                  >Skrzyżowania</router-link
+                  >Skrzyżowania (do usuniecia)</router-link
                 >
               </div>
               <div>
@@ -121,8 +121,10 @@
             <div class="container" style="flex-direction: row;">
               <div class="row justify-content-md-center">
                 <div class="col col-lg-2 box" v-bind:class="{actual: getuserProfile.lvl == n-1, unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
-                 <router-link v-if="getuserProfile.lvl == n-1" to="/Learn" type="button" class="btn btn-primary btn-lg custom-btn" >Teoria</router-link>
+                 <router-link v-if="getuserProfile.lvl == n-1" to="/Learn" type="button" style="text-decoration: none; color: black">{{n}}</router-link>
+                 <router-link v-else-if="getuserProfile.lvl > n-1" :to="'/LearnOne/'+n" type="button" style="text-decoration: none; color: black">{{n}}</router-link>
                 <div v-else>{{n}}</div>
+                
                 </div>
               </div>
             </div>

@@ -7,7 +7,7 @@
     <div class="container-fluid">
       <div>
         <router-link to="/" class="navbar-brand">
-          <img width="30" height="30" class="d-inline-block align-top" style="margin-right: 4px" src="../assets/logo.png"/>
+          <img  height="33" class="d-inline-block align-top" style="margin-right: 4px" src="../assets/logo.png"/>
         </router-link>
         <router-link to="/" class="navbar-brand" v-if="getuserProfile.login === ''">Start</router-link>
         <span class="navbar-brand" v-else>{{ getuserProfile.login }} poziom: {{ getuserProfile.lvl }}</span >
