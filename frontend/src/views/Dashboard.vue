@@ -44,7 +44,7 @@
                   to="/Learn"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
-                  >Teoria (do usuniecia)</router-link
+                  >Teoria</router-link
                 >
               </div>
               <div>
@@ -52,7 +52,7 @@
                   to="/VirtualCar"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
-                  >Skrzyżowania (do usuniecia)</router-link
+                  >Skrzyżowania</router-link
                 >
               </div>
               <div>

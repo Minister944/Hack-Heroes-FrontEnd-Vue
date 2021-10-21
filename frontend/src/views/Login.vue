@@ -1,8 +1,14 @@
 <template>
+      <b-modal v-model="modalShow" >
+        <div class="text-center">
+          Chcesz się uczyć na telefonie? <br/><a style="color: #0d6efd;" href="https://play.google.com/store/apps/details?id=com.kkk.english_weds&hl=pl&gl=US">Pobierz aplikacje</a>
+          <br />Nie zdążyliśmy jescze przygodowac strony w 100% na urządzenia mobilne
+        </div>
+        </b-modal>
        <div class="wrapper fadeInDown">
           <Start />
         <div id="formContent">
-
+          
           <!-- Login Form -->
           <form>
             <p v-if="errors.length" style="color: red">
@@ -33,6 +39,7 @@ export default {
       email: "",
       password: "",
       errors: [],
+      modalShow: false,
     };
   },
   name: "Login",
@@ -86,6 +93,43 @@ export default {
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
       return re.test(email1);
     },
+    detectMob() {
+      const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i,
+      ];
+
+      return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+      });
+    },
+  },
+  mounted() {
+    const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i,
+    ];
+    console.log(
+      toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+      })
+    );
+    if (
+      toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+      })
+    )
+      this.modalShow = true;
   },
   components: {
     Start,

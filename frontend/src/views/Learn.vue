@@ -37,7 +37,7 @@
         </div>
         <!-- tylko tak i nie -->
         <div v-if="this.queryquery.odpowiedz_a === '' && !this.nowodp">
-          <div class="btn" @click="(this.odp = 'T'), (this.nowodp = true)">
+          <div class="btn" @click="(this.odp = 'T'), (this.nowodp = true)" >
             TAK
           </div>
           <div class="btn" @click="(this.odp = 'N'), (this.nowodp = true)">
@@ -132,6 +132,9 @@ export default {
   },
   components: {},
   methods: {
+    btntyp(){
+      console.log('ads');
+    },
     async next(odpq) {
       if (this.odp == this.queryquery.poprawna_odp && odpq) {
         console.log("poprawna odp");
