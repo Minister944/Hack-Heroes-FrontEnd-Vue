@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home fadeInDown ">
     <div class="row row-cols-1 row-cols-lx-4 row-cols-md-3 row-cols-sm-2 ">
       <div class="col mb-4">
         <!-- <div class="card" style="height: 40rem;"> -->
@@ -8,7 +8,7 @@
             <h1 class="card-title">Statystyki</h1>
             <img alt="auto" :src="getImgUrl(getuserProfile.lvl)" />
             <div class="cardstat">
-              {{ getuserProfile.login }} Poziom: {{ getuserProfile.lvl }}
+               {{ getuserProfile.login }} Poziom: {{ getuserProfile.lvl }}
             </div>
             <div class="card-text">
               <div class="labeldata">Najlepszy czas teoria: {{this.naj_wynik_z_test_teoretycznego}}</div>
@@ -349,12 +349,92 @@ img {
   .home {
   padding-left: 4px;
   padding-right: 4px;
-}
+  }
 }
 span {
     position: absolute;
     display: block;
     width: 100%;
     color: black;
+    font-size: 150%;
 }
+.card{
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  opacity: 0;
+  -webkit-animation: fadeIn ease-in 1;
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  animation-duration: 1s;
+}
+
 </style>

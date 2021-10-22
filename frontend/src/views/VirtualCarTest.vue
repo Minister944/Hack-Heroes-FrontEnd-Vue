@@ -1,6 +1,6 @@
 <template>
-  <div class="home p-4 d-flex justify-content-center">
-    <div class="dash p-4 d-flex flex-row">
+  <div class="home d-flex justify-content-center">
+    <div class="dash d-flex flex-row">
       <div id="learning-question" class="">
                     <div class="row video-row">
                       <div class="col-sm-9 col-md-8 col-lg-8" id="resource-holder">
@@ -247,9 +247,13 @@ export default {
 };
 </script>
 <style scoped>
+.home{
+   padding: 24px;
+}
 .dash {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
+  padding: 24px;
 }
 img,
 video {
@@ -279,4 +283,5 @@ video {
 .bad1 {
   color: rgba(212, 75, 75, 0.87);
 }
+
 </style>

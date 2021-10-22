@@ -1,6 +1,6 @@
 <template>
-  <div class="home p-4 d-flex justify-content-center">
-    <div class="dash p-4 d-flex flex-row">
+  <div class="home d-flex justify-content-center">
+    <div class="dash d-flex flex-row">
       <div id="learning-question" class="" v-if="endyest">
                     <div class="row video-row">
                       <div class="col-sm-9 col-md-8 col-lg-8" id="resource-holder">
@@ -8,7 +8,7 @@
                             v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] !== '4' && this.queryquery.pytania[NumberPytanie].media !== ''"
                             v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[NumberPytanie].media"
                           />
-                          <video id="hls-video" autoplay v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && stoptimevideo" class="p-3">
+                          <video id="hls-video" autoplay v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && stoptimevideo">
                             <source
                               v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[NumberPytanie].media"
                               type="video/mp4"
@@ -75,16 +75,16 @@
 
                     <div class="question">
                       <div class="row">
-                        <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 p-3">
+                        <div class="col-xs-12 col-sm-9 col-md-8 col-lg-8 p-3 m-2">
                           <h5>{{this.queryquery.pytania[NumberPytanie].pytanie}}</h5>
                         </div>
                       </div>
 
                       <div class="row" v-if="this.queryquery.pytania[NumberPytanie].odpowiedz_a === ''">
-                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 special">
                           <div type="button" class="btn btn-outline-primary btn-lg" :class="{active: isActiveNIE}" @click="odpuztfun('N')">NIE</div>
                         </div>
-                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                        <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4 special">
                           <div type="button" class="btn btn-outline-primary btn-lg" :class="{active: isActiveTAK}" @click="odpuztfun('T')" >TAK</div>
                         </div>
                       </div>
@@ -356,7 +356,11 @@ export default {
 };
 </script>
 <style scoped>
+.home{
+  padding: 24px;
+}
 .dash {
+  padding: 24px;
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
 }
@@ -370,11 +374,23 @@ video {
   background-color:blue;
 }
 
-
 .good {
   background-color: rgba(91, 214, 75, 0.87);
 }
 .bad {
   background-color: rgba(212, 75, 75, 0.87);
+  
+}
+@media (max-width: 425px) {
+  .home{
+    padding: 4px;
+  }
+  .dash {
+  padding: 0px;
+  }
+  .special{
+    margin: 10px;
+    text-align: center;
+  }
 }
 </style>

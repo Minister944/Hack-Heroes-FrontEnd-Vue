@@ -1,7 +1,13 @@
 <template>
   <div class="home">
+
     <div class="d-flex justify-content-center">
-      <div class="dash text-center p-5">
+      <div class="pabs">
+        <div @click="Rotation(-1)" class="button">Obróć w Lewo</div>
+        <div @click="Rotation(1)" class="button">Obróć W Prawo</div>
+        <div @click="(cofnij())" class="button">Cofnij</div>
+      </div>
+      <div class="dash text-center">
         <div id="a">
           <div class="map">
             <img alt="zdj car" :class="{trans: transf}" :src="getImgUrl(imgstr)" id="image" />
@@ -15,11 +21,7 @@
           </div>
         </div>
       </div>
-      <div class="pabs">
-        <div @click="Rotation(-1)" class="button">Obróć w Lewo</div>
-        <div @click="Rotation(1)" class="button">Obróć W Prawo</div>
-        <div @click="(cofnij())" class="button">Cofnij</div>
-      </div>
+      
     </div>
     
   </div>
@@ -155,7 +157,6 @@ export default {
 
 .pabs {
   position: absolute;
-  display: block;
 }
 .map .aa {
   position: absolute;
@@ -189,5 +190,15 @@ img {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
   width: 70%;
+  padding: 48px;
+}
+
+@media (max-width: 575px) {
+  .dash {
+  width: 100%;
+  margin: 4px;
+  padding: 0px;
+  padding-top: 55px;
+  }
 }
 </style>

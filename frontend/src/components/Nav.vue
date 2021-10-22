@@ -1,16 +1,16 @@
 <template>
   <nav
-    class="navbar navbar-expand-md navbar-dark mb-4"
+    class="navbar navbar-expand-md navbar-dark"
     style="background-color: #3c987a"
-    v-if="getuserProfile.login !== ''"
-  >
+    v-if="getuserProfile.login !== ''">
     <div class="container-fluid">
       <div>
         <router-link to="/" class="navbar-brand">
           <img  alt="logo" height="33" class="d-inline-block align-top" style="margin-right: 4px" src="../assets/logo.png"/>
         </router-link>
         <router-link to="/" class="navbar-brand" v-if="getuserProfile.login === ''">Start</router-link>
-        <span class="navbar-brand" v-else>{{ getuserProfile.login }} poziom: {{ getuserProfile.lvl }}</span >
+        <span class="navbar-brand" v-else>{{ getuserProfile.login }} <span class='visu'>poziom: {{ getuserProfile.lvl }}</span></span >
+
       </div>
       <div>
         <ul
@@ -74,4 +74,21 @@ export default {
 </script>
 
 <style scoped>
+.navbar{
+    margin-bottom: 24px;
+  }
+@media (max-width: 575px) {
+  .navbar{
+    margin-bottom: 4px;
+  }
+}
+@media (max-width: 388px) {
+  .visu{
+    display: none;
+  }
+}
+
+
+
+
 </style>

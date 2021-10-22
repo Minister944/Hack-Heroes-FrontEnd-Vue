@@ -2,16 +2,11 @@
   <div class="home">
     <div class="d-flex justify-content-center">
       <div class="dash text-center">
-        <h1 class="p-3">{{ this.queryquery.pytanie }}</h1>
-        <div class="card-text">
-          Numer pytania: {{ this.queryquery.numer_pytania }}
+        <h2 class="p-3">{{ this.queryquery.pytanie }}</h2>
+        <div class="card-text p-1">
+          Numer pytania: {{ this.queryquery.numer_pytania }} Punkty: {{ this.queryquery.liczba_punktow }} Zakres: {{ this.queryquery.zakres_struktury }}
         </div>
-        <div class="card-text">
-          Punkty: {{ this.queryquery.liczba_punktow }}
-        </div>
-        <div class="card-text">
-          Zakres: {{ this.queryquery.zakres_struktury }}
-        </div>
+
         <img alt="zdj media"
           v-if="this.queryquery.media[this.queryquery.media.length - 1] !== '4' && this.queryquery.media !== ''"
           v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
@@ -297,8 +292,24 @@ video, img {
   background-color: #3c987a;
   border-color: #3c987a;
   margin: 13px;
-  font-size: 30pt;
+  font-size: 20pt;
   min-width: 130px;
+}
+
+@media (max-width: 575px) {
+  .dash {
+  width: 100%;
+  margin: 4px;
+  }
+  .p-3{
+    padding: 2px !important;
+  }
+  video, img {
+  max-width: 100%;
+  }
+  .btn {
+    font-size: 18pt;
+  }
 }
 
 .bad {
