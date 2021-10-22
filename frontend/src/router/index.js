@@ -7,6 +7,7 @@ import VirtualCar from '../views/VirtualCar.vue'
 import Learn from '../views/Learn.vue'
 import Theory from '../views/Theory.vue'
 import LearnOne from '../views/LearnOne.vue'
+import VirtualCarTest from '../views/VirtualCarTest.vue'
 
 const routes = [
   { path: '/', component: Login, meta: { requiredAuth: false } },
@@ -17,6 +18,7 @@ const routes = [
   { path: '/Learn', component: Learn, meta: { requiredAuth: true } },
   { path: '/Theory', component: Theory, meta: { requiredAuth: true } },
   { path: '/LearnOne/:id', component: LearnOne, meta: { requiredAuth: true } },
+  { path: '/VirtualCarTest', component: VirtualCarTest, meta: { requiredAuth: true } },
 ]
 
 const router = createRouter({

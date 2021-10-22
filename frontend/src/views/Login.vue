@@ -374,7 +374,7 @@ input[type="text"]:placeholder {
 }
 
 .underlineHover:hover {
-  color: #0d0d0d;
+  color: #fff;
 }
 
 .underlineHover:hover:after {

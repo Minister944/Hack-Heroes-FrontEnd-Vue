@@ -12,7 +12,7 @@
         <div class="card-text">
           Zakres: {{ this.queryquery.zakres_struktury }}
         </div>
-        <img
+        <img alt="zdj media"
           v-if="this.queryquery.media[this.queryquery.media.length - 1] !== '4' && this.queryquery.media !== ''"
           v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
         />
@@ -22,7 +22,7 @@
             type="video/mp4"
           />
         </video>
-        <img
+        <img alt="zdj media brak zdj"
           v-if="this.queryquery.media === ''"
           src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
         />

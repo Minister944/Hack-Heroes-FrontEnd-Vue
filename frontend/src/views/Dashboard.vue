@@ -6,21 +6,14 @@
         <div class="card">
           <div class="card-body">
             <h1 class="card-title">Statystyki</h1>
-            <img alt="auto" :src="getImgUrl('autoLvl' + getuserProfile.lvl)" />
-            <img
-              alt="kierowca"
-              :src="getImgUrl('kierowcaLvl' + getuserProfile.lvl)"
-            />
+            <img alt="auto" :src="getImgUrl(getuserProfile.lvl)" />
             <div class="cardstat">
               {{ getuserProfile.login }} Poziom: {{ getuserProfile.lvl }}
             </div>
             <div class="card-text">
-              <div class="labeldata">Najlepszy czas teoria: 25 min 42 sec.</div>
-              <div class="labeldata">
-                Najlepszy czas Praktyka: 40 min 18 sec.
-              </div>
+              <div class="labeldata">Najlepszy czas teoria: {{this.naj_wynik_z_test_teoretycznego}}</div>
               <div class="labeldata">Umiesz już {{this.ilosc_przerobionych_pytan1}} pyania na {{this.ilosc_wszystkich_pytan1}}</div>
-              <b-progress :max="this.ilosc_wszystkich_pytan1" style="margin: 5px">
+              <!-- <b-progress :max="this.ilosc_wszystkich_pytan1" style="margin: 5px">
                 <b-progress-bar
                   :value="this.ilosc_przerobionych_pytan1"
                   variant="success"
@@ -28,7 +21,14 @@
                   animated
                   :label="`${((this.ilosc_przerobionych_pytan1 / this.ilosc_wszystkich_pytan1) * 100).toFixed(2)}%`"
                 ></b-progress-bar>
+              </b-progress> -->
+
+              <b-progress role="progressbar" :max="this.ilosc_wszystkich_pytan1" height="2rem">
+                <b-progress-bar :value="this.ilosc_przerobionych_pytan1" variant="success" striped animated>
+                  <span><strong>{{((this.ilosc_przerobionych_pytan1 / this.ilosc_wszystkich_pytan1) * 100).toFixed(2)}}%</strong></span>
+                </b-progress-bar>
               </b-progress>
+
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@
               </div>
               <div>
                 <router-link
-                  to="/VirtualCar"
+                  to="/VirtualCarTest"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
                   >Praktyczny</router-link
@@ -105,10 +105,10 @@
             <h1 class="card-title">Podręcznik kierowcy</h1>
            <ul class="list-group list-group-flush">
               <li href="#" class="list-group-item">Minimalna dopuszczalna głębokość bieżnika przez polskie prawo to 1,6 mm.</li>
-              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></li>
-              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></li>
+              <li class="list-group-item"><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></li>
+              <li class="list-group-item"><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></li>
               <li class="list-group-item">Zalecamy zmienić opony na zimowe, gdy średnia temperatura spadnie i pozostanie poniżej 7°C.</li>
-              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li> 
+              <li class="list-group-item"><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li> 
            </ul>
           </div>
         </div>
@@ -148,25 +148,25 @@
             <div class="container" style="flex-direction: row;">
               <div class="row justify-content-md-center">
                 <div class="col ">
-                  <a target="_blank" href="https://vuejs.org/"><img alt="Vue logo" src="../assets/Vue.png"></a>
+                  <a target="_blank" rel=”noreferrer” href="https://vuejs.org/"><img alt="Vue logo" src="../assets/Vue.png"></a>
                 </div>
                 <div class="col ">
-                  <a target="_blank" href="https://nodejs.org/"><img alt="node logo" src="../assets/node.png" ></a>
+                  <a target="_blank" rel=”noreferrer” href="https://nodejs.org/"><img alt="node logo" src="../assets/node.png" ></a>
                 </div>
                 <div class="w-100"></div>
                 <div class="col ">
-                  <a target="_blank" href="https://www.mysql.com/"><img alt="mysql logo" src="../assets/mysql.png" ></a>
+                  <a target="_blank" rel=”noreferrer” href="https://www.mysql.com/"><img alt="mysql logo" src="../assets/mysql.png" ></a>
                 </div>
                 <div class="col">
-                  <a target="_blank" href="https://dotnet.microsoft.com/apps/xamarin"><img alt="xamarin logo"  src="../assets/xamarin.jpg"></a>
+                  <a target="_blank" rel=”noreferrer” href="https://dotnet.microsoft.com/apps/xamarin"><img alt="xamarin logo"  src="../assets/xamarin.jpg"></a>
                 </div>
 
               </div>
               <p>Aplikacja na telefon panad 40 plikow 6 tys lini kodu.<br/>
               Frontend prawie 30 plikow i 4 tys lini kodu. <br/>
               Piękny backend 5 pliow i 1 tys lini kodu.<br/>
-              I to wszystko w technologiach ktore widzielismy pierwysz raz na oczy :)<br />
-              Pierwsze 4 dni pracy nauka smaych jezykow jak i technologi aby zrobi Hello Worda</p>
+              I to wszystko w technologiach ktore widzielismy pierwysz raz na oczy, no może poza MySQL :)<br />
+              Pierwsze 4 dni pracy to nauka smaych jezykow jak i technologi aby zrobić Hello Worda</p>
             </div>
           </div>
         </div>
@@ -184,6 +184,7 @@ export default {
   name: "Dashboard",
   data() {
     return {
+      naj_wynik_z_test_teoretycznego: '0',
       ilosc_wszystkich_pytan1: 2020,
       ilosc_przerobionych_pytan1: 0,
 
@@ -217,6 +218,20 @@ export default {
       );
     this.ilosc_wszystkich_pytan1 = response.data.ilosc_wszystkich_pytan
     this.ilosc_przerobionych_pytan1 = response.data.ilosc_przerobionych_pytan
+    try{
+       var s = response.data.naj_wynik_z_test_teoretycznego.czas
+      var min = s / 60; 
+        var sLeft = Math.floor(s  % 60);     
+        var minLeft = Math.floor(min % 60); 
+        console.log(sLeft)
+        if (minLeft < 10) minLeft = "0" + minLeft;
+        if (sLeft < 10) sLeft = "0" + sLeft;
+       this.naj_wynik_z_test_teoretycznego = minLeft+ ' min '+sLeft+' sec'
+    } catch{
+      console.log('brak najleposzego czasu')
+    }
+
+
     },
     async getranking(){
       var response = await axios.post(
@@ -321,14 +336,25 @@ img {
   padding: 5px;
 }
 .cardstat {
-  padding: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
   font-size: 20pt;
 }
-.card-title {
-  padding-bottom: 10px;
-}
+
 .home {
   padding-left: 24px;
   padding-right: 24px;
+}
+@media (max-width: 575px) {
+  .home {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+}
+span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    color: black;
 }
 </style>

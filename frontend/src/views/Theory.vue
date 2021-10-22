@@ -4,7 +4,7 @@
       <div id="learning-question" class="" v-if="endyest">
                     <div class="row video-row">
                       <div class="col-sm-9 col-md-8 col-lg-8" id="resource-holder">
-                      <img
+                      <img alt="media"
                             v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] !== '4' && this.queryquery.pytania[NumberPytanie].media !== ''"
                             v-bind:src="'http://46.41.136.62/media/' + this.queryquery.pytania[NumberPytanie].media"
                           />
@@ -14,10 +14,10 @@
                               type="video/mp4"
                             />
                           </video>
-                          <img v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && !stoptimevideo"
+                          <img alt="media film" v-if="this.queryquery.pytania[this.NumberPytanie].media[this.queryquery.pytania[NumberPytanie].media.length - 1] === '4' && this.queryquery.pytania[NumberPytanie].media !== '' && !stoptimevideo"
                             src='http://46.41.136.62/media/obj.png'
                           />
-                          <img
+                          <img alt="media brak zdjecia"
                             v-if="this.queryquery.pytania[NumberPytanie].media === ''"
                             src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
                           />

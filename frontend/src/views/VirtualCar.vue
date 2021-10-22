@@ -4,7 +4,7 @@
       <div class="dash text-center p-5">
         <div id="a">
           <div class="map">
-            <img :class="{trans: transf}" :src="getImgUrl(imgstr)" id="image" />
+            <img alt="zdj car" :class="{trans: transf}" :src="getImgUrl(imgstr)" id="image" />
             <div v-if="rotation == 1 && wheractual != 1" @click="clickusr(1)" class="aa" style="top: 46%; left: 32%; width: 38%; height: 23%;" title="MASKA"></div>
             <div  v-if="rotation == 4 && wheractual != 2" @click="clickusr(2)" class="aa" style="top: 56%; left: 77%; width: 4%; height: 6%;" title="KIERUNKOWSKAZ"></div>
             <div v-if="rotation == 2 && (wheractual != 2 && wheractual != 5)" @click="transf = true, clickusr(2)" class="aa" style="top: 54%; left: 23%; width: 4%; height: 6%;" title="KIERUNKOWSKAZ"></div>
@@ -181,10 +181,6 @@ export default {
   opacity: 0.7;
   cursor: pointer;
 }
-p{             
-
-}
-
 img {
   max-width: 100%;
 }
