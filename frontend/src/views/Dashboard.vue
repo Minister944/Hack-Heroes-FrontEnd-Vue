@@ -105,10 +105,10 @@
             <h1 class="card-title">Podręcznik kierowcy</h1>
            <ul class="list-group list-group-flush">
               <li href="#" class="list-group-item">Minimalna dopuszczalna głębokość bieżnika przez polskie prawo to 1,6 mm.</li>
-              <li class="list-group-item"><a href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></li>
-              <li class="list-group-item"><a href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></li>
+              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></li>
+              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></li>
               <li class="list-group-item">Zalecamy zmienić opony na zimowe, gdy średnia temperatura spadnie i pozostanie poniżej 7°C.</li>
-              <li class="list-group-item"><a href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li> 
+              <li class="list-group-item"><a target="_blank" href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI BEZDOTYKOWEJ</a></li> 
            </ul>
           </div>
         </div>
@@ -135,6 +135,38 @@
                   {{n}}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col mb-4 ">
+        <div class="card" >
+          <div class="card-body">
+            <h1 class="card-title">Technologie</h1>
+            <div class="container" style="flex-direction: row;">
+              <div class="row justify-content-md-center">
+                <div class="col ">
+                  <a target="_blank" href="https://vuejs.org/"><img alt="Vue logo" src="../assets/Vue.png"></a>
+                </div>
+                <div class="col ">
+                  <a target="_blank" href="https://nodejs.org/"><img alt="node logo" src="../assets/node.png" ></a>
+                </div>
+                <div class="w-100"></div>
+                <div class="col ">
+                  <a target="_blank" href="https://www.mysql.com/"><img alt="mysql logo" src="../assets/mysql.png" ></a>
+                </div>
+                <div class="col">
+                  <a target="_blank" href="https://dotnet.microsoft.com/apps/xamarin"><img alt="xamarin logo"  src="../assets/xamarin.jpg"></a>
+                </div>
+
+              </div>
+              <p>Aplikacja na telefon panad 40 plikow 6 tys lini kodu.<br/>
+              Frontend prawie 30 plikow i 4 tys lini kodu. <br/>
+              Piękny backend 5 pliow i 1 tys lini kodu.<br/>
+              I to wszystko w technologiach ktore widzielismy pierwysz raz na oczy :)<br />
+              Pierwsze 4 dni pracy nauka smaych jezykow jak i technologi aby zrobi Hello Worda</p>
             </div>
           </div>
         </div>
@@ -254,6 +286,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .box{
   width: 50px;
   background-color: #e44848;
