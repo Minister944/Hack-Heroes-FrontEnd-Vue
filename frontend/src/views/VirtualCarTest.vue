@@ -34,10 +34,10 @@
                         </div>
                       <div class="row" v-if="this.queryquery.odpowiedz_a === ''">
                         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                          <div type="button" class="btn btn-outline-primary btn-lg" :class="{good: this.nowodp && this.odp === this.queryquery.poprawna_odp && this.odp === 'N', bad: this.nowodp && this.odp !== this.queryquery.poprawna_odp && this.odp === 'N'}" @click="odpuztfun('N')">NIE</div>
+                          <div type="button" class="btn btn-outline-primary btn-lg special" :class="{good: this.nowodp && this.odp === this.queryquery.poprawna_odp && this.odp === 'N', bad: this.nowodp && this.odp !== this.queryquery.poprawna_odp && this.odp === 'N'}" @click="odpuztfun('N')">NIE</div>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-4 col-lg-4">
-                          <div type="button" class="btn btn-outline-primary btn-lg" :class="{good: this.nowodp && this.odp === this.queryquery.poprawna_odp && this.odp === 'T', bad: this.nowodp && this.odp !== this.queryquery.poprawna_odp && this.odp === 'T'}"   @click="odpuztfun('T')" >TAK</div>
+                          <div type="button" class="btn btn-outline-primary btn-lg special" :class="{good: this.nowodp && this.odp === this.queryquery.poprawna_odp && this.odp === 'T', bad: this.nowodp && this.odp !== this.queryquery.poprawna_odp && this.odp === 'T'}"   @click="odpuztfun('T')" >TAK</div>
                         </div>
                       </div>
 
@@ -254,6 +254,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
   padding: 24px;
+  width: 80%;
 }
 img,
 video {
@@ -284,4 +285,18 @@ video {
   color: rgba(212, 75, 75, 0.87);
 }
 
+@media (max-width: 425px) {
+  .home{
+    padding: 4px;
+  }
+  .dash {
+  padding: 0px;
+  width: 100%;
+  
+  }
+  .special{
+    margin: 10px;
+    text-align: center;
+  }
+}
 </style>

@@ -46,6 +46,10 @@ export default {
   methods: {
     
     checkForm() {
+
+      
+
+
       this.errors = [];
 
       if (!this.login) {

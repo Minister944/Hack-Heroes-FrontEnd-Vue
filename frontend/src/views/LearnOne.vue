@@ -4,17 +4,17 @@
       <div id="learning-question" class="">
                     <div class="row video-row">
                       <div class="col-sm-9 col-md-8 col-lg-8" id="resource-holder">
-                      <img alt="media"
+                      <img alt="media" @error="test()"
                             v-if="this.queryquery.media[this.queryquery.media.length - 1] !== '4' && this.queryquery.media !== ''"
                             v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
                           />
                           <video id="hls-video" autoplay v-if="this.queryquery.media[this.queryquery.media.length - 1] === '4' && this.queryquery.media !== ''" class="p-3">
-                            <source
+                            <source  @error="test()"
                               v-bind:src="'http://46.41.136.62/media/' + this.queryquery.media"
                               type="video/mp4"
                             />
                           </video>
-                          <img alt="media brak zdjecia"
+                          <img alt="media brak zdjecia" @error="test()"
                             v-if="this.queryquery.media === ''"
                             src='http://46.41.136.62/media/brak_zdjecia_1024x576.jpg'
                           /> 
@@ -171,7 +171,7 @@ export default {
      
 
 
-
+      return
     },
   },
   computed: {

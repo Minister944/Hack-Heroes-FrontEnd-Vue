@@ -163,7 +163,7 @@
 
               </div>
               <p>Aplikacja na telefon panad 40 plikow 6 tys lini kodu.<br/>
-              Frontend prawie 30 plikow i 4 tys lini kodu. <br/>
+              Frontend 15 plikow i 3 tys lini kodu. <br/>
               Piękny backend 5 pliow i 1 tys lini kodu.<br/>
               I to wszystko w technologiach ktore widzielismy pierwysz raz na oczy, no może poza MySQL :)<br />
               Pierwsze 4 dni pracy to nauka smaych jezykow jak i technologi aby zrobić Hello Worda</p>
