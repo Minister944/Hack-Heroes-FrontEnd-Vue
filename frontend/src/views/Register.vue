@@ -11,8 +11,8 @@
               </ul>
             </p>
             <input type="text" v-model="login" class="fadeIn second" placeholder="TwojLogin" >
-            <input type="text" v-model="email" class="fadeIn second" placeholder="TwojEmail@email.pl" >
-            <input type="password" v-model="password" class="fadeIn third" placeholder="!Super.Tajne_haslo#">
+            <input type="text" v-model="email" class="fadeIn second" placeholder="Email" >
+            <input type="password" v-model="password" class="fadeIn third" placeholder="Hasło">
             <input type="button" class="fadeIn fourth" value="Rejestracja" @click="sendapis">
           </form>
 

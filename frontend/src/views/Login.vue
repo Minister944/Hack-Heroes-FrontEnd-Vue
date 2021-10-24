@@ -17,8 +17,8 @@
                 <li v-bind:key="error" v-for="error in errors">{{ error }}</li>
               </ul>
             </p>
-            <input type="text" id="login" v-model="email" class="fadeIn second" placeholder="TwojEmail@email.pl" >
-            <input type="password" id="password" v-model="password" class="fadeIn third" placeholder="!Super.Tajne_haslo#">
+            <input type="text" id="login" v-model="email" class="fadeIn second" placeholder="Email" >
+            <input type="password" id="password" v-model="password" class="fadeIn third" placeholder="Hasło">
             <input type="button" class="fadeIn fourth" value="Zaloguj" @click="login">
           </form>
 

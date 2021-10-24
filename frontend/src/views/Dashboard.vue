@@ -128,7 +128,7 @@
                 </div>
               </div>
             </div>
-            <h1 class="card-title pt-3">Skrzyzowania</h1>
+            <h1 class="card-title pt-3">Skrzyżowania</h1>
             <div class="container" style="flex-direction: row;">
               <div class="row justify-content-md-center">
                 <div class="col col-lg-2 box p-0" v-bind:class="{unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
