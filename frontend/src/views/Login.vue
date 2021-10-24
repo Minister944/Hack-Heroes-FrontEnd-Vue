@@ -1,4 +1,5 @@
 <template>
+<div class="bodyyy">
       <b-modal v-model="modalShow" >
         <div class="text-center">
           Chcesz się uczyć na telefonie? <br/><a style="color: #0d6efd;" href="https://play.google.com/store/apps/details?id=com.kkk.english_weds&hl=pl&gl=US">Pobierz aplikacje</a>
@@ -28,6 +29,7 @@
 
         </div>
       </div>
+</div>
 </template>
 <script>
 import { mapActions, mapGetters } from "vuex";
@@ -110,6 +112,7 @@ export default {
     },
   },
   mounted() {
+    // document.getElementsByTagName("body").style = "background: url('http://46.41.136.62/media/road.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; ";
     const toMatch = [
       /Android/i,
       /webOS/i,
@@ -380,4 +383,5 @@ input[type="text"]:placeholder {
 .underlineHover:hover:after {
   width: 100%;
 }
-</style>
+
+</style>+

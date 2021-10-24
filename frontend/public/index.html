@@ -8,7 +8,13 @@
     <link rel="icon" href="<%= BASE_URL %>favicon.png">
     <title>Prawojazdy NULL</title>
   </head>
-  <body style=" background: url(road.jpg) no-repeat center center fixed; background-size: cover; height: 100%; background-color: rgb(41, 40, 40);">
+  <body style= "
+  background: url('http://46.41.136.62/media/road.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    " > 
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
@@ -16,3 +22,16 @@
     <!-- built files will be auto injected -->
   </body>
 </html>
+<!-- style= "
+  background: url('http://46.41.136.62/media/road.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    " -->
+
+<style>
+body{
+  background-color: rgb(219, 219, 219);
+}
+</style>

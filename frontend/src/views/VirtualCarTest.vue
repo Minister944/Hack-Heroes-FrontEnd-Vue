@@ -251,7 +251,6 @@ export default {
    padding: 24px;
 }
 .dash {
-  background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
   padding: 24px;
   width: 80%;

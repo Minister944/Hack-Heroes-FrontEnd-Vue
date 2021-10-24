@@ -187,7 +187,6 @@ img {
 }
 
 .dash {
-  background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
   width: 70%;
   padding: 48px;

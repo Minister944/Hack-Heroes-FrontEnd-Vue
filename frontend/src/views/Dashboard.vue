@@ -1,38 +1,39 @@
 <template>
   <div class="home fadeInDown ">
-    <div class="row row-cols-1 row-cols-lx-4 row-cols-md-3 row-cols-sm-2 ">
-      <div class="col mb-4">
-        <!-- <div class="card" style="height: 40rem;"> -->
-        <div class="card">
-          <div class="card-body">
-            <h1 class="card-title">Statystyki</h1>
-            <img alt="auto" :src="getImgUrl(getuserProfile.lvl)" />
-            <div class="cardstat">
-               {{ getuserProfile.login }} Poziom: {{ getuserProfile.lvl }}
+     <div class="row">
+      <div class="col mb-3">
+         <div class="card p-3">
+           <div class="container">
+            <div class="row">
+              <div class="col-6">
+                <img class="img-sadow" alt="auto" style="max-width:100%" :src="getImgUrl(getuserProfile.lvl)" />
+              </div>
+              <div class="col-6">
+                <strong>{{ getuserProfile.login }}</strong><br/>
+                Poziom: {{ getuserProfile.lvl }}
+              </div>
             </div>
-            <div class="card-text">
-              <div class="labeldata">Najlepszy czas teoria: {{this.naj_wynik_z_test_teoretycznego}}</div>
-              <div class="labeldata">Umiesz już {{this.ilosc_przerobionych_pytan1}} pyania na {{this.ilosc_wszystkich_pytan1}}</div>
-              <!-- <b-progress :max="this.ilosc_wszystkich_pytan1" style="margin: 5px">
-                <b-progress-bar
-                  :value="this.ilosc_przerobionych_pytan1"
-                  variant="success"
-                  striped
-                  animated
-                  :label="`${((this.ilosc_przerobionych_pytan1 / this.ilosc_wszystkich_pytan1) * 100).toFixed(2)}%`"
-                ></b-progress-bar>
-              </b-progress> -->
-
-              <b-progress role="progressbar" :max="this.ilosc_wszystkich_pytan1" height="2rem">
+          </div>
+          
+           <div class="labeldata" style="padding-top: 10px; ">Umiesz już {{this.ilosc_przerobionych_pytan1}} pyania na {{this.ilosc_wszystkich_pytan1}}</div>
+           <b-progress role="progressbar" :max="this.ilosc_wszystkich_pytan1" height="2rem">
                 <b-progress-bar :value="this.ilosc_przerobionych_pytan1" variant="success" striped animated>
                   <span><strong>{{((this.ilosc_przerobionych_pytan1 / this.ilosc_wszystkich_pytan1) * 100).toFixed(2)}}%</strong></span>
                 </b-progress-bar>
               </b-progress>
+          <div class="labeldata">Najlepszy czas teoria: {{this.naj_wynik_z_test_teoretycznego}}</div>
+          <div style="padding-top: 100px; "></div>
 
-            </div>
-          </div>
-        </div>
+          <h5>Podręcznik kierowcy</h5>
+              <div class="pb-2 wiedz"><fa icon="ruler-vertical" class="m-2" style="  min-width: 21px;" /><div>Minimalna dopuszczalna głębokość bieżnika przez polskie prawo to 1,6 mm.</div></div>
+              <div class="pb-2 wiedz"><fa icon="video" class="m-2" style="  min-width: 21px;"/><div><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=FJlGMFLhTos">5 STRASZNYCH BŁĘDÓW młodego KIEROWCY</a></div></div>
+              <div class="pb-2 wiedz"><fa icon="video" class="m-2" style="  min-width: 21px;"/><div><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=nV7O8apBRZY">Jak przygotowac auto na zimę</a></div></div>
+              <div class="pb-2 wiedz"><fa icon="temperature-low" class="m-2" style="  min-width: 21px;"/><div>Zalecamy zmienić opony na zimowe, gdy średnia temperatura spadnie i pozostanie poniżej 7°C.</div></div>
+              <div class="pb-2 wiedz"><fa icon="video" class="m-2" style="  min-width: 21px;"/><div><a target="_blank" rel=”noreferrer” href="https://www.youtube.com/watch?v=dQf8U97tGoA">JAK UMYĆ SAMOCHÓD POD DOMEM I NA MYJNI</a></div></div>
       </div>
+      </div>
+      <div class="col col-md-8  col-12 ">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2  row-cols-lg-2">
 
       <div class="col mb-4">
         <div class="card">
@@ -49,7 +50,7 @@
               </div>
               <div>
                 <router-link
-                  to="/VirtualCar"
+                  to="/Skrzyz"
                   type="button"
                   class="btn btn-primary btn-lg custom-btn"
                   >Skrzyżowania</router-link
@@ -99,7 +100,7 @@
         </div>
       </div>
 
-      <div class="col mb-4">
+      <!-- <div class="col mb-4">
         <div class="card">
           <div class="card-body">
             <h1 class="card-title">Podręcznik kierowcy</h1>
@@ -112,17 +113,16 @@
            </ul>
           </div>
         </div>
-      </div>
-
+      </div> -->
       <div class="col mb-4 ">
         <div class="card" >
           <div class="card-body">
             <h1 class="card-title">Nauka</h1>
             <div class="container" style="flex-direction: row;">
               <div class="row justify-content-md-center">
-                <div class="col col-lg-2 box" v-bind:class="{actual: getuserProfile.lvl == n-1, unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
-                 <router-link v-if="getuserProfile.lvl == n-1" to="/Learn" type="button" style="text-decoration: none; color: black">{{n}}</router-link>
-                 <router-link v-else-if="getuserProfile.lvl > n-1" :to="'/LearnOne/'+n" type="button" style="text-decoration: none; color: black">{{n}}</router-link>
+                <div class="col col-lg-2 box p-0" v-bind:class="{actual: getuserProfile.lvl == n-1, unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
+                 <router-link v-if="getuserProfile.lvl == n-1" to="/Learn" type="button" style="text-decoration: none; color: black;" class="linku">{{n}}</router-link>
+                 <router-link v-else-if="getuserProfile.lvl > n-1" :to="'/LearnOne/'+n" type="button" style="text-decoration: none; color: black" class="linku">{{n}}</router-link>
                 <div v-else>{{n}}</div>
                 
                 </div>
@@ -131,8 +131,10 @@
             <h1 class="card-title pt-3">Skrzyzowania</h1>
             <div class="container" style="flex-direction: row;">
               <div class="row justify-content-md-center">
-                <div class="col col-lg-2 box" v-bind:class="{unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
-                  {{n}}
+                <div class="col col-lg-2 box p-0" v-bind:class="{unloc: getuserProfile.lvl > n-1}" v-for="n in 20" :key="n">
+                 <router-link v-if="getuserProfile.lvl > n-1" :to="'/Skrzyz/'+n" type="button" style="text-decoration: none; color: black;" class="linku">{{n}}</router-link>
+                <div v-else>{{n}}</div>
+                
                 </div>
               </div>
             </div>
@@ -141,7 +143,7 @@
       </div>
 
 
-      <div class="col mb-4 ">
+      <!-- <div class="col mb-4 ">
         <div class="card" >
           <div class="card-body">
             <h1 class="card-title">Technologie</h1>
@@ -170,9 +172,15 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
+      </div>
     </div>
+    </div>
+
+
+
+    
   </div>
 </template>
 
@@ -301,16 +309,18 @@ export default {
 };
 </script>
 <style scoped>
-
 .box{
-  width: 50px;
+  flex: 0 0 50px;
   background-color: #e44848;
   display: flex; 
   justify-content: center; 
   line-height: 50px;
-  height: 50px;
-   border-radius: 1rem;
+   border-radius: 2rem;
    margin: 1px;
+}
+.box:hover{
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 .actual{
@@ -339,6 +349,7 @@ img {
   padding-left: 25px;
   padding-right: 25px;
   font-size: 20pt;
+
 }
 
 .home {
@@ -347,8 +358,8 @@ img {
 }
 @media (max-width: 575px) {
   .home {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
   }
 }
 span {
@@ -360,8 +371,17 @@ span {
 }
 .card{
   background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+-webkit-box-shadow: 8px 8px 24px 0px rgba(10, 10, 10, 1);
+-moz-box-shadow: 8px 8px 24px 0px rgba(10, 10, 10, 1);
+box-shadow: 8px 8px 24px 0px rgba(10, 10, 10, 1);
+} 
+.img-sadow{
+    border-radius: 50%;
+  -webkit-box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
 }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -436,5 +456,27 @@ span {
   -moz-animation-duration: 1s;
   animation-duration: 1s;
 }
+.linku{
+  width: 100%;
+  height: 100%;
+}
+.podkier{
+  list-style-type: none;
+}
+.wiedz{
+  display: flex; 
+  align-items: center;
+}
 
 </style>
+
+<style>
+.dash{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 2rem;
+  -webkit-box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px -13px rgba(66, 68, 90, 1);
+} 
+</style>
+

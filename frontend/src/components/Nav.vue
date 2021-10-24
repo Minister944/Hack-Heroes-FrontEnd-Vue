@@ -1,38 +1,23 @@
 <template>
-  <nav
-    class="navbar navbar-expand-md navbar-dark"
-    style="background-color: #3c987a"
-    v-if="getuserProfile.login !== ''">
-    <div class="container-fluid">
-      <div>
-        <router-link to="/" class="navbar-brand">
-          <img  alt="logo" height="33" class="d-inline-block align-top" style="margin-right: 4px" src="../assets/logo.png"/>
-        </router-link>
-        <router-link to="/" class="navbar-brand" v-if="getuserProfile.login === ''">Start</router-link>
-        <span class="navbar-brand" v-else>{{ getuserProfile.login }} <span class='visu'>poziom: {{ getuserProfile.lvl }}</span></span >
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #3c987a" v-if="getuserProfile.login !== ''">
 
-      </div>
-      <div>
-        <ul
-          class="navbar-nav me-auto mb-2 mb-md-0"
-          v-if="getuserProfile.login === ''">
-          <li class="nav-item">
-            <router-link to="/login" class="nav-link">Logowanie</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/register" class="nav-link" >Rejestracja</router-link>
-          </li>
-        </ul>
-
-        <ul
-          class="navbar-nav me-auto mb-2 mb-md-0"
-          v-if="getuserProfile.login !== ''">
-          <li class="nav-item">
-            <a href="#" class="nav-link" @click="logout()">Wylogoj</a>
-          </li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+           <router-link class="special" to="'/" ><img alt="logo" height="33" class="d-inline-block align-top" style="margin-right: 12px" src="../assets/logo.png"/></router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="'/Learn" >Nauka Praktyka</router-link>
+        </li>
+        <li class="nav-item" v-if="this.getuserProfile.lvl > 0">
+          <router-link class="nav-link" :to="'/Skrzyz/'+this.getuserProfile.lvl">Nauka Skrzyżowania</router-link>
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="'/Virtualcar">Nauka Praktyka</router-link>
+        </li>
+      </ul>
     </div>
+      <div class="wylog" @click="logout()">Wylogoj</div>
   </nav>
 </template>
 
@@ -74,18 +59,24 @@ export default {
 </script>
 
 <style scoped>
-.navbar{
-    margin-bottom: 24px;
-  }
-@media (max-width: 575px) {
-  .navbar{
-    margin-bottom: 4px;
-  }
+
+.wylog{
+  padding-right: 24px;
+  color: rgba(255, 255, 255, 0.55);
 }
-@media (max-width: 388px) {
-  .visu{
-    display: none;
-  }
+.wylog:hover{
+  cursor: pointer;
+   color: rgba(255, 255, 255, 0.76);
+}
+
+img{
+  padding-left: 24px;
+  height: 40px;
+}
+
+.navbar{
+  padding: 4px;
+  margin-bottom: 24px;
 }
 
 

@@ -8,6 +8,7 @@ import Learn from '../views/Learn.vue'
 import Theory from '../views/Theory.vue'
 import LearnOne from '../views/LearnOne.vue'
 import VirtualCarTest from '../views/VirtualCarTest.vue'
+import Skrzyz from '../views/Skrzyz.vue'
 
 const routes = [
   { path: '/', component: Login, meta: { requiredAuth: false } },
@@ -19,6 +20,7 @@ const routes = [
   { path: '/Theory', component: Theory, meta: { requiredAuth: true } },
   { path: '/LearnOne/:id', component: LearnOne, meta: { requiredAuth: true } },
   { path: '/VirtualCarTest', component: VirtualCarTest, meta: { requiredAuth: true } },
+  { path: '/Skrzyz/:id', component: Skrzyz, meta: { requiredAuth: true } },
 ]
 
 const router = createRouter({

@@ -183,7 +183,6 @@ export default {
 </script>
 <style scoped>
 .dash {
-  background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1rem;
 }
 img,
