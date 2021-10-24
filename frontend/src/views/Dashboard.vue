@@ -1,6 +1,6 @@
 <template>
   <div class="home fadeInDown ">
-     <div class="row">
+     <div class="row no-gutters">
       <div class="col mb-3">
          <div class="card p-3">
            <div class="container">
@@ -15,13 +15,13 @@
             </div>
           </div>
           
-           <div class="labeldata" style="padding-top: 10px; ">Umiesz już {{this.ilosc_przerobionych_pytan1}} pyania na {{this.ilosc_wszystkich_pytan1}}</div>
+           <div class="labeldata" style="padding-top: 10px; ">Umiesz już {{this.ilosc_przerobionych_pytan1}} pytania na {{this.ilosc_wszystkich_pytan1}}</div>
            <b-progress role="progressbar" :max="this.ilosc_wszystkich_pytan1" height="2rem">
                 <b-progress-bar :value="this.ilosc_przerobionych_pytan1" variant="success" striped animated>
                   <span><strong>{{((this.ilosc_przerobionych_pytan1 / this.ilosc_wszystkich_pytan1) * 100).toFixed(2)}}%</strong></span>
                 </b-progress-bar>
               </b-progress>
-          <div class="labeldata">Najlepszy czas teoria: {{this.naj_wynik_z_test_teoretycznego}}</div>
+          <div class="labeldata">Najlepszy czas egzaminu teoretycznego: {{this.naj_wynik_z_test_teoretycznego}}</div>
           <div style="padding-top: 100px; "></div>
 
           <h5>Podręcznik kierowcy</h5>
@@ -33,7 +33,7 @@
       </div>
       </div>
       <div class="col col-md-8  col-12 ">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2  row-cols-lg-2">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-2 no-gutters">
 
       <div class="col mb-4">
         <div class="card">
@@ -92,7 +92,7 @@
         <div class="card">
           <div class="card-body">
             <h1 class="card-title">Ranking</h1>
-            <p>Lista użytkowników ktorzy rozwiazali teori na 100% i w jak najkrotszym czasie</p>
+            <p>Najlepsze czasy użytkowników, którzy rozwiązali egzamin teoretyczny na 100%.</p>
             <div class="card-text">
               <b-table striped hover :items="items" :fields="fields"></b-table>
             </div>
@@ -305,7 +305,10 @@ export default {
   mounted() {
     this.gettatistic()
     this.getranking()
-  }
+  },
+  beforeCreate() {
+        document.body.className = 'home1';
+    },
 };
 </script>
 <style scoped>

@@ -7,7 +7,7 @@
            <router-link class="special" to="'/" ><img alt="logo" height="33" class="d-inline-block align-top" style="margin-right: 12px" src="../assets/logo.png"/></router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="'/Learn" >Nauka Praktyka</router-link>
+          <router-link class="nav-link" to="'/Learn" >Nauka Teoria</router-link>
         </li>
         <li class="nav-item" v-if="this.getuserProfile.lvl > 0">
           <router-link class="nav-link" :to="'/Skrzyz/'+this.getuserProfile.lvl">Nauka Skrzyżowania</router-link>
@@ -17,7 +17,7 @@
         </li>
       </ul>
     </div>
-      <div class="wylog" @click="logout()">Wylogoj</div>
+      <div class="wylog" @click="logout()">Wyloguj</div>
   </nav>
 </template>
 

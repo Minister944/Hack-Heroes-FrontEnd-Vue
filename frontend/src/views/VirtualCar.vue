@@ -3,8 +3,8 @@
 
     <div class="d-flex justify-content-center">
       <div class="pabs">
-        <div @click="Rotation(-1)" class="button">Obróć w Lewo</div>
-        <div @click="Rotation(1)" class="button">Obróć W Prawo</div>
+        <div @click="Rotation(-1)" class="button">Obróć w lewo</div>
+        <div @click="Rotation(1)" class="button">Obróć w prawo</div>
         <div @click="(cofnij())" class="button">Cofnij</div>
       </div>
       <div class="dash text-center">
