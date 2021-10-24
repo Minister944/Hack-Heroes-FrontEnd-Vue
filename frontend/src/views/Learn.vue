@@ -127,9 +127,6 @@ export default {
   },
   components: {},
   methods: {
-    btntyp(){
-      console.log('ads');
-    },
     async next(odpq) {
       if (this.odp == this.queryquery.poprawna_odp && odpq) {
         console.log("poprawna odp");
@@ -217,8 +214,6 @@ export default {
       );
       this.queryquery = response.data.pytanie;
       this.pytania.shift();
-      console.log("pobrano pytanie:");
-      console.log(this.queryquery);
     },
     getImgUrl(pet) {
       var images = require.context("../assets/", false, /\.png$/);

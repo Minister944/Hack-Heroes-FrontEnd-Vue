@@ -281,7 +281,6 @@ export default {
         break
         
       }
-       console.log("this.NumberPytanie: "+this.NumberPytanie)
        console.log('open czas na zapoznanie sie z odp')
       for(var i=this.max_timezapoznanie; i> 0;i--){
         this.timezapoznanie = i
@@ -322,7 +321,6 @@ export default {
       this.isActiveC= false
 
       this.NumberPytanie++
-      console.log(this.odpuzt)
     }
     this.poprawne = 0
      for(var licz1 =0; licz1 < 31; licz1++){   
@@ -350,7 +348,6 @@ export default {
       ).catch(err => console.error(err))
 
       this.queryquery = response.data 
-      console.log(this.queryquery)
            
   },
 };
