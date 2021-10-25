@@ -227,7 +227,9 @@ export default {
     this.ilosc_wszystkich_pytan1 = response.data.ilosc_wszystkich_pytan
     this.ilosc_przerobionych_pytan1 = response.data.ilosc_przerobionych_pytan
     try{
-       var s = response.data.naj_wynik_z_test_teoretycznego.czas
+      if(response.data.naj_wynik_z_test_teoretycznego == 'brak') this.naj_wynik_z_test_teoretycznego = 'Brak'
+      else{
+      var s = response.data.naj_wynik_z_test_teoretycznego.czas
       var min = s / 60; 
         var sLeft = Math.floor(s  % 60);     
         var minLeft = Math.floor(min % 60); 
@@ -235,6 +237,8 @@ export default {
         if (minLeft < 10) minLeft = "0" + minLeft;
         if (sLeft < 10) sLeft = "0" + sLeft;
        this.naj_wynik_z_test_teoretycznego = minLeft+ ' min '+sLeft+' sec'
+      }
+       
     } catch{
       console.log('brak najleposzego czasu')
     }
