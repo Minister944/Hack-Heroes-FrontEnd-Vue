@@ -2,7 +2,7 @@
 <div class="bodyyy">
       <b-modal v-model="modalShow" >
         <div class="text-center">
-          Chcesz się uczyć na telefonie? <br/><a style="color: #0d6efd;" href="https://play.google.com/store/apps/details?id=com.kkk.english_weds&hl=pl&gl=US">Pobierz aplikacje</a>
+          Chcesz się uczyć na telefonie? <br/><a style="color: #0d6efd;" href="https://drive.google.com/drive/folders/1_LSO5Bdl8zZeTyA5GXgzfAjj47IiJDM5?usp=sharing">Pobierz aplikacje</a>
           <br />Nie zdążyliśmy jescze przygodowac strony w 100% na urządzenia mobilne
         </div>
         </b-modal>
